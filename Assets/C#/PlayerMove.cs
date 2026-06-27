@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     public Vector3 playerPos;
     public bool isPlayer = false;
 
-    public TimerManager playerTimer;
+    public TimerManager playTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
     {
         //‘€ì•û–@
         //wƒL[
-        if (playerTimer.isPlayer == true)
+        if (playTimer.isPlayer == true)
         {
             if (Keyboard.current.wKey.isPressed)
             {

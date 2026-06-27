@@ -15,6 +15,8 @@ public class Toycar : MonoBehaviour
     private Vector3 moveDirection;
     private float fixedY;
 
+    public TimerManager toyTimer;
+
     public bool isToyCar = false;
 
     public TimerManager toyTimer;

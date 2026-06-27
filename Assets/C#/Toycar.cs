@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Toycar : MonoBehaviour
 {
+    public float forceMagnitude = 10f;
     private Rigidbody rb;
     void Start()
     {
@@ -11,6 +12,17 @@ public class Toycar : MonoBehaviour
 
     void Update()
     {
-        rb.AddForce(new Vector3(0f, 0f, 10.0f));
+
+        Vector3 forwardDirection = this.transform.forward;
+
+        rb.AddForce(forwardDirection * forceMagnitude);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Vector3 newVector;
+        newVector = transform.eulerAngles;
+        newVector.y += 90.0f;
+        this.transform.eulerAngles = newVector;
     }
 }

@@ -19,6 +19,8 @@ public class Toycar : MonoBehaviour
 
     public bool isToyCar = false;
 
+    public TimerManager toyTimer;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();

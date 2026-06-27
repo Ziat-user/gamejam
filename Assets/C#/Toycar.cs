@@ -15,6 +15,8 @@ public class Toycar : MonoBehaviour
     private Vector3 moveDirection;
     private float fixedY;
 
+    public TimerManager toyTimer;
+
     public bool isToyCar = false;
 
     private void Awake()
@@ -55,7 +57,7 @@ public class Toycar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(isToyCar == true)
+        if(toyTimer.isToyCar == true)
         {
             Vector3 currentPosition = rb.position;
 

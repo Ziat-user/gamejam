@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-    //public Player player;
-    //public ToyCar toyCar;
+    //public PlayerMove player;
+    //public Toycar toyCar;
 
     //public float cameraHeight = 10.0f;
     //public float cameraBack = -2.0f;
@@ -13,7 +13,7 @@ public class MoveCamera : MonoBehaviour
 
     //void Start()
     //{
-        
+
     //}
     //void Update()
     //{

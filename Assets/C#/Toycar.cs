@@ -17,6 +17,8 @@ public class Toycar : MonoBehaviour
 
     public bool isToyCar = false;
 
+    public TimerManager toyTimer;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -55,7 +57,7 @@ public class Toycar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(isToyCar == true)
+        if(toyTimer.isToyCar == true)
         {
             Vector3 currentPosition = rb.position;
 

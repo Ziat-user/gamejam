@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCheck : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class PlayerCheck : MonoBehaviour
         isToutch = playerCollider.bounds.Intersects(toycarCollider.bounds);
         if(isToutch)
         {
-            Debug.Log("êGÇÍÇΩÅI");
+            SceneManager.LoadScene("TitleScene");
+ 
         }
         
     }

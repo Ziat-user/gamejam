@@ -1,33 +1,44 @@
-//using TMPro;
-//using Unity.VisualScripting;
-//using UnityEngine;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
 
-//public class MoveCamera : MonoBehaviour
-//{
-//    public PlayerMove player;
-//    public Toycar toyCar;
+public class MoveCamera : MonoBehaviour
+{
+    public PlayerMove player;
+    public Toycar toyCar;
 
-//    public float cameraHeight = 10.0f;
-//    public float cameraBack = -2.0f;
+    public float cameraPlayerHeight = 10.0f;
+    public float cameraPlayerBack = -2.0f;
 
+    public float cameraToyHeight = 10.0f;
+    public float cameraToyBack = -2.0f;
 
-//    void Start()
-//    {
+    public TimerManager tm;
 
-//    }
-//    void Update()
-//    {
-//        if (player.GetFlag)
-//        {
-//            Vector3 cameraPlayerPos = player.transform.position;
-//            cameraPlayerPos.y += cameraHeight;
-//            cameraPlayerPos.z += cameraBack;
-//        }
+    void Start()
+    {
 
-//        if (toyCar.GetFlag)
-//        {
-//            Vector3 cameraToyPos = toyCar.transform.position;
+    }
+    void Update()
+    {
+        if (tm.isPlayer)
+        {
+            Vector3 cameraPlayerPos = player.transform.position;
+            transform.LookAt(cameraPlayerPos);
+            cameraPlayerPos.y += cameraPlayerHeight;
+            cameraPlayerPos.z += cameraPlayerBack;
+            transform.position = cameraPlayerPos;
+            //Vector3 cameraAngle = new Vector3(90.0f, 0.0f, 0.0f);
+            //transform.eulerAngles = cameraAngle;
+        }
 
-//        }
-//    }
-//}
+        if (tm.isToyCar)
+        {
+            Vector3 cameraToyPos = toyCar.transform.position;
+            transform.LookAt(cameraToyPos);
+            cameraToyPos.y += cameraToyHeight;
+            cameraToyPos.z += cameraToyBack;
+            transform.position = cameraToyPos;
+        }
+    }
+}

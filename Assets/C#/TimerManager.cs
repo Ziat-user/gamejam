@@ -54,22 +54,22 @@ public class TimerManager : MonoBehaviour
             }
         }
 
-        // カー移動時間
-        if (isPlayer)
-        {
-            // 時間計測
-            CountTimer();
-
-            if (currentTime <= 0)
-            {
-                // フラグオフ
-                isPlayer = false;
-                // フラグオン
-                isToyCar = true;
-
-                SwitchTimer();
-            }
-        }
+        //// カー移動時間
+        //if (isPlayer)
+        //{
+        //    // 時間計測
+        //    CountTimer();
+        //
+        //    if (currentTime <= 0)
+        //    {
+        //        // フラグオフ
+        //        isPlayer = false;
+        //        // フラグオン
+        //        isToyCar = true;
+        //
+        //        SwitchTimer();
+        //    }
+        //}
 
         // 時間表示
         TimerText();

@@ -15,6 +15,8 @@ public class Toycar : MonoBehaviour
     private Vector3 moveDirection;
     private float fixedY;
 
+    public bool isToyCar = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -53,15 +55,19 @@ public class Toycar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 currentPosition = rb.position;
+        if(isToyCar == true)
+        {
+            Vector3 currentPosition = rb.position;
 
-        // Yç¿ïWÇèÌÇ…å≈íË
-        currentPosition.y = fixedY;
+            // Yç¿ïWÇèÌÇ…å≈íË
+            currentPosition.y = fixedY;
 
-        Vector3 nextPosition = currentPosition + moveDirection * moveSpeed * Time.fixedDeltaTime;
-        nextPosition.y = fixedY;
+            Vector3 nextPosition = currentPosition + moveDirection * moveSpeed * Time.fixedDeltaTime;
+            nextPosition.y = fixedY;
 
-        rb.MovePosition(nextPosition);
+            rb.MovePosition(nextPosition);
+
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
